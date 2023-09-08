@@ -2,6 +2,7 @@ function firstNonRepeatedChar(str) {
  // Write your code here 
 	let n=str.length;
 	let i=1;
+	
 	if(str.charAt(0)!=str.charAt(i)){
 		return str.charAt(0);
 	}
@@ -14,17 +15,17 @@ function firstNonRepeatedChar(str) {
 				continue;
 			}
 			else
-			return str.charAt(i+1);
+			return char;
 		}
 		
 		i++;
-	}
-	  return str.charAt(i+1);	
+	} 
+	  
+	    if(n%2!=0&&str.charAt(n-1)!==str.charAt(n-2)){
+			return str.charAt(n-1);   
+		}
 	
-	if(n%2!=0){
-		return str.charAt(n-1);
-	}
 	return null;
 }
-const input = prompt("Enter a string");
+  const input = prompt("Enter a string");
 alert(firstNonRepeatedChar(input));  
